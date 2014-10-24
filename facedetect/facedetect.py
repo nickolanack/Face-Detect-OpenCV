@@ -13,7 +13,7 @@ def detectObjects(image):
   storage = cvCreateMemStorage(0)
   cvClearMemStorage(storage)
    
-  cvEqualizeHist(grayscale, grayscale)
+  #cvEqualizeHist(grayscale, grayscale)
   face_cascade = cvLoadHaarClassifierCascade(
     '/usr/share/opencv/haarcascades/haarcascade_frontalface_default.xml',
     cvSize(1,1))

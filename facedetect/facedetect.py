@@ -4,10 +4,11 @@ from opencv.cv import *
 from opencv.highgui import *
  
 def detectObjects(image):
-  """Converts an image to grayscale and prints the locations of any 
-     faces found"""
-  grayscale = cvCreateImage(cvSize(image.width, image.height), 8, 1)
-  cvCvtColor(image, grayscale, CV_BGR2GRAY)
+
+  #Grayscale is not used as it seems to produce better results with color images
+  #Converts an image to grayscale and prints the locations of any faces found
+  #grayscale = cvCreateImage(cvSize(image.width, image.height), 8, 1)
+  #cvCvtColor(image, grayscale, CV_BGR2GRAY)
  
   storage = cvCreateMemStorage(0)
   cvClearMemStorage(storage)

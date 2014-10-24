@@ -17,18 +17,19 @@ def detectObjects(image):
   storage = cvCreateMemStorage(0)
   cvClearMemStorage(storage)
    
+  #print os.path.dirname(__file__)+'/haarcascades/haarcascade_frontalface_default.xml'
   #cvEqualizeHist(grayscale, grayscale)
   face_cascade = cvLoadHaarClassifierCascade(
-    'haarcascades/haarcascade_frontalface_default.xml',
+    os.path.dirname(__file__)+'/haarcascades/haarcascade_frontalface_default.xml',
     cvSize(1,1))
     
   face_cascade_2 = cvLoadHaarClassifierCascade(
-    'haarcascades/haarcascade_frontalface_alt.xml',
+    os.path.dirname(__file__)+'/haarcascades/haarcascade_frontalface_alt.xml',
     cvSize(1,1))
  
    
   profile_cascade = cvLoadHaarClassifierCascade(
-    'haarcascades/haarcascade_profileface.xml',
+    os.path.dirname(__file__)+'/haarcascades/haarcascade_profileface.xml',
     cvSize(1,1)) 
    
   faces = cvHaarDetectObjects(image, face_cascade, storage, 1.2, 3,

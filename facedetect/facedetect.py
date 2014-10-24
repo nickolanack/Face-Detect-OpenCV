@@ -1,11 +1,15 @@
 #!/usr/bin/python
+
+# this script requires openCV to be installed on your system.
+# and assumes that haarcascades 
+
 import sys, os
 from opencv.cv import *
 from opencv.highgui import *
  
 def detectObjects(image):
 
-  #Grayscale is not used as it seems to produce better results with color images
+  # Grayscale is not used as it seems to produce better results with color images
   #Converts an image to grayscale and prints the locations of any faces found
   #grayscale = cvCreateImage(cvSize(image.width, image.height), 8, 1)
   #cvCvtColor(image, grayscale, CV_BGR2GRAY)
@@ -15,16 +19,16 @@ def detectObjects(image):
    
   #cvEqualizeHist(grayscale, grayscale)
   face_cascade = cvLoadHaarClassifierCascade(
-    '/usr/share/opencv/haarcascades/haarcascade_frontalface_default.xml',
+    'haarcascades/haarcascade_frontalface_default.xml',
     cvSize(1,1))
     
   face_cascade_2 = cvLoadHaarClassifierCascade(
-    '/usr/share/opencv/haarcascades/haarcascade_frontalface_alt.xml',
+    'haarcascades/haarcascade_frontalface_alt.xml',
     cvSize(1,1))
  
    
   profile_cascade = cvLoadHaarClassifierCascade(
-    '/usr/share/opencv/haarcascades/haarcascade_profileface.xml',
+    'haarcascades/haarcascade_profileface.xml',
     cvSize(1,1)) 
    
   faces = cvHaarDetectObjects(image, face_cascade, storage, 1.2, 3,
